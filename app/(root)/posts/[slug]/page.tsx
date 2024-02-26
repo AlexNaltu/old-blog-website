@@ -1,4 +1,4 @@
-import { getPost } from "@/sanity/actions";
+import { getFeaturedAnime, getPost } from "@/sanity/actions";
 import { dataset, projectId } from "@/sanity/env";
 import { urlForImage } from "@/sanity/lib/image";
 import { formatDate } from "date-fns";
@@ -8,6 +8,8 @@ import { ImFacebook2 } from "react-icons/im";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import FeaturedCard from "@/components/FeaturedCard";
+import IdeeaSection from "@/components/IdeeaSection";
 
 export const revalidate = 600;
 
@@ -35,9 +37,11 @@ const serializers = {
 const BlogPage = async ({ params }: { params: { slug: string } }) => {
   const post = await getPost({ slug: params.slug });
 
+  const featuredAnime = await getFeaturedAnime();
+
   return (
     <div className="max-w-[1000px] mx-auto p-1">
-      <div className="flex">
+      <div className="flex flex-col lg:flex-row lg:justify-around lg:gap-4">
         <div key={post._id} className="flex flex-col max-w-2xl mx-auto">
           <div className="flex items-center gap-4 mt-2">
             <h1 className="capitalize bg-[#ff6100] w-fit text-white px-2 py-1 rounded-r-3xl text-xs sm:text-base md:text-lg">
@@ -70,11 +74,31 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
           />
         </div>
         <div>
-          <div className="hidden lg:inline-flex flex-col gap-10  items-center p-2 mt-3">
-            <ImFacebook2 size={80} />
-            <FaSquareInstagram size={80} />
-            <FaTiktok size={80} />
-            <FaXTwitter size={80} />
+          <div>
+            <div className="featured mt-12">
+              {featuredAnime.map((items: any) => (
+                <div key={items._id}>
+                  <section className="p-1 lg:pl-3">
+                    <h1 className="uppercase font-black text-2xl tracking-tighter navbar w-fit my-2 text-white">
+                      {items.title}
+                    </h1>
+                    <div className="mt-2 flex w-full flex-wrap flex-start gap-2 lg:flex-col">
+                      {items.posts.map((item: any) => (
+                        <div key={item._id}>
+                          <FeaturedCard
+                            title={item.title}
+                            name={item.name}
+                            image={item.image}
+                            slug={item.slug}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+                </div>
+              ))}
+            </div>
+            <IdeeaSection />
           </div>
         </div>
       </div>

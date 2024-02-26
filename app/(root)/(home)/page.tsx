@@ -2,6 +2,7 @@ import AnimeCard from "@/components/AnimeCard";
 import FeaturedCard from "@/components/FeaturedCard";
 import Filters from "@/components/Filters";
 import Header from "@/components/Header";
+import IdeeaSection from "@/components/IdeeaSection";
 import PlaylistCard from "@/components/PlaylistCard";
 import PostCard from "@/components/PostCard";
 import { getFeaturedAnime, getPostPlaylist, getPosts } from "@/sanity/actions";
@@ -83,7 +84,7 @@ const Home = async ({ searchParams }: Props) => {
             ))}
           </div>
         </main>
-        <div className="">
+        <div>
           <div className="featured mt-12">
             {featuredAnime.map((items: any) => (
               <div key={items._id}>
@@ -107,17 +108,7 @@ const Home = async ({ searchParams }: Props) => {
               </div>
             ))}
           </div>
-          <div className="ideea-bg w-full mt-3 text-white px-4 py-10 lg:w-fit lg:h-fit">
-            <h1 className="uppercase tracking-widest font-black text-3xl">
-              Ideas
-            </h1>
-            <h2 className="uppercase tracking-tighter font-bold text-xs max-w-md lg:max-w-xs">
-              If you have any ideas for blog posts, I would love to hear from
-              you! Feel free to reach out to me here with your suggestions. Rest
-              assured, you will be given full credit for your contribution to
-              the blog. Looking forward to hearing your creative ideas!
-            </h2>
-          </div>
+          <IdeeaSection />
         </div>
       </div>
     </div>
