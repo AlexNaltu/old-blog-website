@@ -62,14 +62,21 @@ export const getPosts = async (params: GetResourcesParams) => {
   }
 };
 
-export const getAnimeReviews = async () => {
+export const getFeaturedAnime = async () => {
   try {
     const resources = await readClient.fetch(
-      groq`*[_type == "animeRecomandation"] | order(_id desc) {
+      groq`*[_type == "featuredAnimePlaylist"] | order(_id desc) {
         _id,
         title,
-        rating,
-        "image": mainImage.asset->url
+        posts[0...6]->{
+          title,
+          _id,
+          "image": mainImage.asset->url,
+          category,
+          name,
+          description,
+          "slug": slug.current
+        }
       }`
     );
 

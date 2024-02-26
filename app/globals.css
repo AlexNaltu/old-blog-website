@@ -193,13 +193,20 @@
   left: 0;
   height: 4px;
   width: 0;
-  background: #ff6100;
+  background: rgb(255, 97, 0);
   animation: border-grow 5s linear infinite;
 }
 
 .ideea-bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.699), rgba(0, 0, 0, 0.699)),
-    url("/ideeabg.png");
+  background: linear-gradient(rgba(255, 97, 0, 0.308), rgba(255, 97, 0, 0.308)),
+    url("/footerbg2.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.featured {
+  background: linear-gradient(rgba(0, 0, 0, 0.525), rgba(0, 0, 0, 0.525)),
+    url("/footerbg1.png");
   background-size: cover;
   background-position: center;
 }

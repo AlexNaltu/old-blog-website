@@ -1,9 +1,10 @@
 import AnimeCard from "@/components/AnimeCard";
+import FeaturedCard from "@/components/FeaturedCard";
 import Filters from "@/components/Filters";
 import Header from "@/components/Header";
 import PlaylistCard from "@/components/PlaylistCard";
 import PostCard from "@/components/PostCard";
-import { getAnimeReviews, getPostPlaylist, getPosts } from "@/sanity/actions";
+import { getFeaturedAnime, getPostPlaylist, getPosts } from "@/sanity/actions";
 import React from "react";
 
 export const revalidate = 60;
@@ -20,12 +21,11 @@ const Home = async ({ searchParams }: Props) => {
   });
 
   const postsPlaylist = await getPostPlaylist();
-
-  const animeRecomandation = await getAnimeReviews();
+  const featuredAnime = await getFeaturedAnime();
 
   return (
     <div className="max-w-screen-2xl">
-      <div className="min-[1055px]:flex justify-center gap-3 min-[1300px]:gap-7">
+      <div className="lg:flex justify-center gap-3 min-[1300px]:gap-7">
         <main>
           <section>
             <Filters />
@@ -83,12 +83,35 @@ const Home = async ({ searchParams }: Props) => {
             ))}
           </div>
         </main>
-        <div className="ideea-bg w-full mt-3 text-white px-4 py-10 lg:w-fit lg:h-fit lg:ml-1">
-          <div>
+        <div className="">
+          <div className="featured mt-12">
+            {featuredAnime.map((items: any) => (
+              <div key={items._id}>
+                <section className="p-1 lg:pl-3">
+                  <h1 className="uppercase font-black text-2xl tracking-tighter navbar w-fit my-2 text-white">
+                    {items.title}
+                  </h1>
+                  <div className="mt-2 flex w-full flex-wrap flex-start gap-2 lg:flex-col">
+                    {items.posts.map((item: any) => (
+                      <div key={item._id}>
+                        <FeaturedCard
+                          title={item.title}
+                          name={item.name}
+                          image={item.image}
+                          slug={item.slug}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              </div>
+            ))}
+          </div>
+          <div className="ideea-bg w-full mt-3 text-white px-4 py-10 lg:w-fit lg:h-fit">
             <h1 className="uppercase tracking-widest font-black text-3xl">
               Ideas
             </h1>
-            <h2 className="uppercase tracking-tighter font-bold text-xs max-w-md lg:max-w-sm">
+            <h2 className="uppercase tracking-tighter font-bold text-xs max-w-md lg:max-w-xs">
               If you have any ideas for blog posts, I would love to hear from
               you! Feel free to reach out to me here with your suggestions. Rest
               assured, you will be given full credit for your contribution to
