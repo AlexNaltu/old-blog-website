@@ -18,20 +18,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-5 p-2 sm:p-5">
           <SearchForm />
-          <div className="hidden sm:inline-flex items-center gap-2">
-            <Link
-              href="/log-in"
-              className="rounded-full text-[#FF6100] hover:text-orange-700 transition-all duration-300"
-            >
-              <RiInstagramFill size={25} />
-            </Link>
-            <Link
-              href="/log-in"
-              className="rounded-full text-[#FF6100] hover:text-orange-700 transition-all duration-300"
-            >
-              <SiDiscord size={25} />
-            </Link>
-          </div>
+  
         </div>
       </nav>
     </div>

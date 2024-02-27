@@ -39,7 +39,7 @@ const Home = async ({ searchParams }: Props) => {
                     query={searchParams?.query || ""}
                     category={searchParams?.category || ""}
                   />
-                  <div className="flex w-full flex-wrap  gap-2 justify-center sm:justify-start pl-1 mt-2">
+                  <div className="flex w-full flex-wrap gap-2 sm:justify-start pl-1 mt-2">
                     {posts?.length > 0 ? (
                       posts.map((post: any) => (
                         <PostCard
@@ -52,7 +52,7 @@ const Home = async ({ searchParams }: Props) => {
                         />
                       ))
                     ) : (
-                      <p className="font-black uppercase">No resources found</p>
+                      <p className="font-black uppercase">No posts found</p>
                     )}
                   </div>
                 </div>

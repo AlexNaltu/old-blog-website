@@ -29,14 +29,14 @@ export default function Hero() {
         </p>
         <div className="flex w-fit border-2 ">
           <Link
-            href="/sign-up"
+            href="https://discord.gg/cBRc6uZKeC"
             className="flex items-center gap-2 text-sm font-black tracking-tighter px-8 py-6 sm:px-10 sm:py-8 md:px-16 lg:px-24 b1-image w-fit text-white cursor-pointer"
           >
             <BsDiscord size={20} />
             SERVER
           </Link>
           <Link
-            href="/sign-up"
+            href="https://www.instagram.com/imnotalxn/"
             className="flex items-center gap-2 text-sm font-black tracking-tighter px-8 py-6 sm:px-10 sm:py-8 md:px-16 lg:px-24 b2-image w-fit text-white"
           >
             <BsInstagram size={20} />
