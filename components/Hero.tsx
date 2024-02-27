@@ -29,7 +29,7 @@ export default function Hero() {
         </p>
         <div className="flex w-fit border-2 ">
           <Link
-            href="https://discord.gg/cBRc6uZKeC"
+            href="https://discord.gg/f6ku3N8w"
             className="flex items-center gap-2 text-sm font-black tracking-tighter px-8 py-6 sm:px-10 sm:py-8 md:px-16 lg:px-24 b1-image w-fit text-white cursor-pointer"
           >
             <BsDiscord size={20} />
