@@ -6,7 +6,7 @@ import IdeeaSection from "@/components/IdeeaSection";
 import PlaylistCard from "@/components/PlaylistCard";
 import PostCard from "@/components/PostCard";
 import { getFeaturedAnime, getPostPlaylist, getPosts } from "@/sanity/actions";
-import React, { Suspense } from "react";
+import React from "react";
 
 export const revalidate = 60;
 
@@ -88,7 +88,7 @@ const Home = async ({ searchParams }: Props) => {
           <div className="featured mt-12">
             {featuredAnime.map((items: any) => (
               <div key={items._id}>
-                <section className="p-1 lg:pl-3">
+                <section className="p-3 min-[516px]:pl-1">
                   <h1 className="uppercase font-black text-2xl tracking-tighter navbar w-fit my-2 text-white">
                     {items.title}
                   </h1>

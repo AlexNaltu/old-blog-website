@@ -210,3 +210,18 @@
   background-size: cover;
   background-position: center;
 }
+
+.ideea {
+  position: relative;
+}
+
+.ideea::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: rgb(152, 0, 0);
+  animation: border-grow 5s linear infinite;
+}

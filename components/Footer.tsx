@@ -3,6 +3,7 @@ import { FaSquareInstagram, FaTiktok, FaXTwitter } from "react-icons/fa6";
 import { ImFacebook2 } from "react-icons/im";
 import NewsletterForm from "./NewsletterForm";
 import { BsInstagram } from "react-icons/bs";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -10,22 +11,33 @@ const Footer = () => {
       <div className="flex flex-col items-start sm:flex-row  justify-around sm:items-end">
         <NewsletterForm />
         <div className="flex gap-3 lg:gap-8 items-center px-5 mb-6 text-white">
-          <ImFacebook2
-            size={40}
-            className="hover:text-black cursor-pointer transition-all duration-200 ease-in-out"
-          />
-          <BsInstagram
-            size={40}
-            className="hover:text-black cursor-pointer transition-all duration-200 ease-in-out"
-          />
-          <FaTiktok
-            size={40}
-            className="hover:text-black cursor-pointer transition-all duration-200 ease-in-out"
-          />
-          <FaXTwitter
-            size={40}
-            className="hover:text-black cursor-pointer transition-all duration-200 ease-in-out"
-          />
+          <Link href="https://www.facebook.com/profile.php?id=61554246167577">
+            <ImFacebook2
+              size={40}
+              className="hover:text-[#ff6100] cursor-pointer transition-all duration-200 ease-in-out"
+            />
+          </Link>
+
+          <Link href="https://discord.gg/cBRc6uZKeC">
+            <BsInstagram
+              size={40}
+              className="hover:text-[#ff6100] cursor-pointer transition-all duration-200 ease-in-out"
+            />
+          </Link>
+
+          <Link href="https://www.tiktok.com/@imhim_alxn">
+            <FaTiktok
+              size={40}
+              className="hover:text-[#ff6100] cursor-pointer transition-all duration-200 ease-in-out"
+            />
+          </Link>
+
+          <Link href="">
+            <FaXTwitter
+              size={40}
+              className="hover:text-[#ff6100] cursor-pointer transition-all duration-200 ease-in-out"
+            />
+          </Link>
         </div>
       </div>
       <div>

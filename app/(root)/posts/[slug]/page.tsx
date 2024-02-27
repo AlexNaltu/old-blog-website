@@ -15,22 +15,47 @@ export const revalidate = 600;
 
 interface BlockProps {
   children: React.ReactNode;
+  node: any;
 }
 
 const BlockContent = require("@sanity/block-content-to-react");
 
 const serializers = {
   types: {
-    block: (props: BlockProps) => (
-      <>
-        <h1 className="font-black uppercase text-xs sm:text-base md:text-lg tracking-tighter">
-          {props.children}
-        </h1>
-        <p className={` tracking-tighter my-4 text-xs sm:text-base md:text-lg`}>
-          {props.children}
-        </p>
-      </>
-    ),
+    block: (props: BlockProps) => {
+      switch (props.node.style) {
+        case "h1":
+          return (
+            <h1 className="font-black uppercase text-sm sm:text-lg md:text-2xl tracking-tighter mt-1">
+              {props.children}
+            </h1>
+          );
+        case "h2":
+          return (
+            <h2 className="font-black uppercase text-xs sm:text-base md:text-xl tracking-tighter mt-1">
+              {props.children}
+            </h2>
+          );
+        case "h3":
+          return (
+            <h2 className="font-black uppercase text-xs sm:text-base md:text-lg tracking-tighter mt-1">
+              {props.children}
+            </h2>
+          );
+        case "h4":
+          return (
+            <h2 className="font-black uppercase text-xs sm:text-base md:text-lg tracking-tighter mt-1">
+              {props.children}
+            </h2>
+          );
+        default:
+          return (
+            <p className=" tracking-tighter my-2 xl:my-3 text-xs sm:text-base md:text-lg">
+              {props.children}
+            </p>
+          );
+      }
+    },
   },
 };
 
