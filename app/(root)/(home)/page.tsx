@@ -6,7 +6,7 @@ import IdeeaSection from "@/components/IdeeaSection";
 import PlaylistCard from "@/components/PlaylistCard";
 import PostCard from "@/components/PostCard";
 import { getFeaturedAnime, getPostPlaylist, getPosts } from "@/sanity/actions";
-import React from "react";
+import React, { Suspense } from "react";
 
 export const revalidate = 60;
 
