@@ -85,7 +85,7 @@ const Home = async ({ searchParams }: Props) => {
           </div>
         </main>
         <div>
-          <div className="featured mt-12">
+          <div className="featured mt-12 lg:flex lg:justify-center">
             {featuredAnime.map((items: any) => (
               <div key={items._id}>
                 <section className="p-3 min-[516px]:pl-1">

@@ -24,11 +24,11 @@ const PlaylistCard = ({ title, id, image, name, description, slug }: Props) => {
             height={440}
             className="aspect-video object-cover max-w-[250px]"
           />
-          <div className="flex flex-col gap-1 mt-1">
-            <h2 className="uppercase font-black tracking-tighter text-[#ff6100] text-xs">
+          <div className="flex flex-col mt-1">
+            <h2 className="uppercase font-black tracking-tighter text-[#ff6100] text-xs lg:text-sm">
               {name}
             </h2>
-            <h1 className="uppercase font-black text-xs lg:text-base tracking-tighter line-clamp-2">
+            <h1 className="uppercase font-black text-xs lg:text-base xl:text-lg tracking-tighter line-clamp-2">
               {title}
             </h1>
             <p className="line-clamp-4 text-xs font-medium">{description}</p>

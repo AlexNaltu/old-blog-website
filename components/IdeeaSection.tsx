@@ -7,9 +7,9 @@ const IdeeaSection = () => {
       <h1 className="uppercase tracking-widest font-black text-3xl">Ideas</h1>
       <h2 className="uppercase tracking-tighter font-bold text-xs max-w-md lg:max-w-xs">
         If you have any ideas for blog posts, I would love to hear from you!
-        Feel free to reach out to me{" "}
-        <span className="ideea">
-          <Link href="https://www.instagram.com/imnotalxn/">here</Link>
+        Feel free to reach out to me on{" "}
+        <span className="ideea font-black">
+          <Link href="https://www.instagram.com/imnotalxn/">INSTAGRAM</Link>
         </span>{" "}
         with your suggestions. Rest assured, you will be given full credit for
         your contribution to the blog. Looking forward to hearing your creative
