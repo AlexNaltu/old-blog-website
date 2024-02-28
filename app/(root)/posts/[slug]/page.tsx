@@ -26,31 +26,31 @@ const serializers = {
       switch (props.node.style) {
         case "h1":
           return (
-            <h1 className="font-black uppercase text-sm sm:text-lg md:text-3xl tracking-tighter mt-1">
+            <h1 className="font-black uppercase text-lg md:text-3xl tracking-tighter mt-1">
               {props.children}
             </h1>
           );
         case "h2":
           return (
-            <h2 className="font-black uppercase text-xs sm:text-base md:text-2xl tracking-tighter mt-1">
+            <h2 className="font-black uppercase text-base md:text-2xl tracking-tighter mt-1">
               {props.children}
             </h2>
           );
         case "h3":
           return (
-            <h2 className="font-black uppercase text-xs sm:text-base md:text-xl tracking-tighter mt-1">
+            <h2 className="font-black uppercase text-base md:text-xl tracking-tighter mt-1">
               {props.children}
             </h2>
           );
         case "h4":
           return (
-            <h2 className="font-black uppercase text-xs sm:text-base md:text-lg tracking-tighter mt-1">
+            <h2 className="font-black uppercase text-base md:text-lg tracking-tighter mt-1">
               {props.children}
             </h2>
           );
         default:
           return (
-            <p className=" tracking-tighter my-2 xl:my-3 text-xs sm:text-base md:text-lg">
+            <p className=" tracking-tighter my-2 xl:my-3 text-base md:text-lg">
               {props.children}
             </p>
           );
