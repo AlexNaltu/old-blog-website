@@ -65,10 +65,9 @@ export default defineType({
       type: "datetime",
     }),
     defineField({
-      name: "tags",
-      title: "Tags",
-      type: "array",
-      of: [{ type: "string" }],
+      name: "credit",
+      title: "Credit",
+      type: "string",
     }),
     defineField({
       name: "time",

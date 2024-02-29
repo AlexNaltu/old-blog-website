@@ -18,7 +18,7 @@ export const getPostPlaylist = async () => {
       groq`*[_type == "postPlaylist"] | order(_id desc) {
         _id,
         title,
-        posts[0...6]->{
+        posts[0...10]->{
           title,
           _id,
           "image": mainImage.asset->url,
@@ -102,7 +102,7 @@ export const getPost = async ({ slug }: SlugProps) => {
         },
         category,
         publishedAt,
-        tags[]
+        credit
         
     }`
     );
