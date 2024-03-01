@@ -11,7 +11,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import FeaturedCard from "@/components/FeaturedCard";
 import IdeeaSection from "@/components/IdeeaSection";
 
-export const revalidate = 600;
+export const revalidate = 60;
 
 interface BlockProps {
   children: React.ReactNode;
