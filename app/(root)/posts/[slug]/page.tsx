@@ -4,12 +4,9 @@ import { urlForImage } from "@/sanity/lib/image";
 import { formatDate } from "date-fns";
 import Image from "next/image";
 import React from "react";
-import { ImFacebook2 } from "react-icons/im";
-import { FaSquareInstagram } from "react-icons/fa6";
-import { FaTiktok } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import FeaturedCard from "@/components/FeaturedCard";
 import IdeeaSection from "@/components/IdeeaSection";
+import { Metadata } from "next";
 
 export const revalidate = 60;
 
@@ -62,6 +59,11 @@ const serializers = {
 const BlogPage = async ({ params }: { params: { slug: string } }) => {
   const post = await getPost({ slug: params.slug });
 
+  const metadata: Metadata = {
+    title: post.title,
+    description: "Welcome to AnimeAlxn",
+  };
+
   const featuredAnime = await getFeaturedAnime();
 
   return (
@@ -80,9 +82,9 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
               <p>At: {formatDate(new Date(post.publishedAt), "dd.MM.yyyy")}</p>
             </div>
           </div>
-          <title className="font-black uppercase tracking-tighter text-lg sm:text-xl md:text-2xl">
+          <p className="font-black uppercase tracking-tighter text-lg sm:text-xl md:text-2xl">
             {post.title}
-          </title>
+          </p>
           <Image
             src={urlForImage(post.mainImage)}
             alt="/"
