@@ -80,9 +80,9 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
               <p>At: {formatDate(new Date(post.publishedAt), "dd.MM.yyyy")}</p>
             </div>
           </div>
-          <p className="font-black uppercase tracking-tighter text-lg sm:text-xl md:text-2xl">
+          <title className="font-black uppercase tracking-tighter text-lg sm:text-xl md:text-2xl">
             {post.title}
-          </p>
+          </title>
           <Image
             src={urlForImage(post.mainImage)}
             alt="/"
