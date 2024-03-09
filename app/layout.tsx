@@ -4,6 +4,12 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const metadata: Metadata = {
+  title: "AnimeAlxn",
+  description:
+    "AnimeAlxn: Your go-to hub for all things anime! Explore reviews, recommendations, and insights on the latest series and classics alike.",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
