@@ -7,6 +7,7 @@ import React from "react";
 import FeaturedCard from "@/components/FeaturedCard";
 import IdeeaSection from "@/components/IdeeaSection";
 import { Metadata } from "next";
+import Head from "next/head";
 
 export const revalidate = 60;
 
@@ -59,11 +60,6 @@ const serializers = {
 const BlogPage = async ({ params }: { params: { slug: string } }) => {
   const post = await getPost({ slug: params.slug });
 
-  const metadata: Metadata = {
-    title: post.title,
-    description: "Welcome to AnimeAlxn",
-  };
-
   const featuredAnime = await getFeaturedAnime();
 
   return (
@@ -82,6 +78,12 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
               <p>At: {formatDate(new Date(post.publishedAt), "dd.MM.yyyy")}</p>
             </div>
           </div>
+          <Head>
+            <title className="font-black uppercase tracking-tighter text-lg sm:text-xl md:text-2xl">
+              {post.title}
+            </title>
+            <meta name="description" content={`${post.description}`} />
+          </Head>
           <p className="font-black uppercase tracking-tighter text-lg sm:text-xl md:text-2xl">
             {post.title}
           </p>
