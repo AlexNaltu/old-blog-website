@@ -1,3 +1,4 @@
+import AnimeCard from "@/components/AnimeCard";
 import FeaturedCard from "@/components/FeaturedCard";
 import Filters from "@/components/Filters";
 import Header from "@/components/Header";
@@ -5,6 +6,7 @@ import IdeeaSection from "@/components/IdeeaSection";
 import PlaylistCard from "@/components/PlaylistCard";
 import PostCard from "@/components/PostCard";
 import { getFeaturedAnime, getPostPlaylist, getPosts } from "@/sanity/actions";
+import Head from "next/head";
 import React from "react";
 
 export const revalidate = 60;
@@ -24,8 +26,8 @@ const Home = async ({ searchParams }: Props) => {
   const featuredAnime = await getFeaturedAnime();
 
   return (
-    <div className="max-w-screen-2xl">
-      <head>
+    <div className="flex justify-center">
+      <Head>
         <meta
           name="google-site-verification"
           content="ZaRw7EQp5mccz-sOh-df0ZtJL31npJ-IldsU3l2JvMQ"
@@ -35,8 +37,8 @@ const Home = async ({ searchParams }: Props) => {
           name="description"
           content="AnimeAlxn: Your go-to hub for all things anime! Explore reviews, recommendations, and insights on the latest series and classics alike."
         />
-      </head>
-      <div className="lg:flex justify-center gap-3 min-[1300px]:gap-7">
+      </Head>
+      <div className="lg:flex justify-evenly gap-3 min-[1300px]:gap-7 max-w-7xl">
         <main>
           <section>
             <Filters />
@@ -95,7 +97,7 @@ const Home = async ({ searchParams }: Props) => {
           </div>
         </main>
         <div>
-          <div className="featured mt-12 lg:flex lg:justify-center">
+          <div className="featured mt-12 lg:flex lg:justify-center min-w-[300px]">
             {featuredAnime.map((items: any) => (
               <div key={items._id}>
                 <section className="p-3 min-[516px]:pl-1">
