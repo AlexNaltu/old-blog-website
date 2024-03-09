@@ -1,4 +1,3 @@
-import AnimeCard from "@/components/AnimeCard";
 import FeaturedCard from "@/components/FeaturedCard";
 import Filters from "@/components/Filters";
 import Header from "@/components/Header";
@@ -30,6 +29,11 @@ const Home = async ({ searchParams }: Props) => {
         <meta
           name="google-site-verification"
           content="ZaRw7EQp5mccz-sOh-df0ZtJL31npJ-IldsU3l2JvMQ"
+        />
+        <title>AnimeAlxn</title>
+        <meta
+          name="description"
+          content="AnimeAlxn: Your go-to hub for all things anime! Explore reviews, recommendations, and insights on the latest series and classics alike."
         />
       </head>
       <div className="lg:flex justify-center gap-3 min-[1300px]:gap-7">
