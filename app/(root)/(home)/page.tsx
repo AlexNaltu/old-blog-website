@@ -26,6 +26,12 @@ const Home = async ({ searchParams }: Props) => {
 
   return (
     <div className="max-w-screen-2xl">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="ZaRw7EQp5mccz-sOh-df0ZtJL31npJ-IldsU3l2JvMQ"
+        />
+      </head>
       <div className="lg:flex justify-center gap-3 min-[1300px]:gap-7">
         <main>
           <section>
