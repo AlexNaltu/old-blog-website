@@ -3,7 +3,6 @@
 import { formUrlQuery } from "@/sanity/utils";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 
 const links = ["all", "anime", "manga", "merchandise", "games"];
 
